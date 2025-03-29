@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test random Fill</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+
+  </head>
+  <body>
+    <h1>Заполненное случ поле, которое выполняется на сервере</h1>
+        
+    <div>
+
+
+      <!-- здесь у нас кнопки обернуте в форму, чтобы можно было отправить get запрос на сервер
+       на сервре настроене соотв мрушрутизация (см. файл app.js) -->
+
+      <form action="/bluePill" method="get">
+        <button type="submit" >Иллюзия</button>
+      </form>
+      
+      <form action="/redPill" method="get">
+        <button type="submit">Реальность</button>
+      </form>
+    </div>
+
+        <!--здесь с помощью скрита js, который обернут представление ejs формируем поле, 
+        которое сощздается на основании массива, который мы заполнили функией, вызванной
+          из роутера (см. index.js -->
+
+    <div class="board">
+      
+      <% for( let i = 0; i < 10; i++ ) { %>
+        <div class="row">
+          <% for( let j = 0; j < 10; j++ ) { %>
+            
+              <% if(randomFill[i][j]==1){ %>
+                <div class="fillCell"></div>     
+              <% } else{ %>
+                <div class="cell"></div>
+                <% } %>
+          <% } %>       
+                
+                
+              
+          </div>  
+      <% } %>
+  
+    </div>
+   </body>
+</html>
