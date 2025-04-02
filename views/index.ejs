@@ -33,11 +33,11 @@
       <% for( let i = 0; i < 10; i++ ) { %>
         <div class="row">
           <% for( let j = 0; j < 10; j++ ) { %>
-            
+            <div id="<%=i%>:<%=j%>"
               <% if(randomFill[i][j]==1){ %>
-                <div class="fillCell"></div>     
+                 class="fillCell"></div>     
               <% } else{ %>
-                <div class="cell"></div>
+                 class="cell"></div>
                 <% } %>
           <% } %>       
                 
